@@ -22,7 +22,6 @@ export const createCollection = async (name: string) => {
       location: 'us-central1',
       imageFields: ['image'],
     }),
-    // remove when moving to repo
     generative: weaviate.configure.generative.openAI(),
     properties: [
       {

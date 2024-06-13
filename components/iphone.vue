@@ -106,9 +106,7 @@ function convertImage(event) {
 
 
     reader.onload = async () => {
-        // base64File.value = ;
         base64File.value = toString(reader.result.split(',')[1]);
-        // console.log(toString(reader.result.split(',')[1]))
 
         // explore this data piping 
         await searchImage(reader.result)
@@ -130,13 +128,17 @@ function convertImage(event) {
 async function searchImage(file) {
     loading.value = true
 
-    response.value = await $fetch('/api/search', {
+    let res = await $fetch('/api/search', {
         method: 'post',
         body: JSON.stringify({
             data: file,
         })
     })
+
+    response.value = res
+
     loading.value = false
+    show.value = false
 }
 
 
@@ -145,9 +147,7 @@ async function textSearch() {
     loading.value = true
     let res = await $fetch(`/api/search?query=${textTerm.value}`)
     response.value = res
-    console.log(res)
 
-    generatedRecs.value = res.generated
     loading.value = false
     show.value = false
 

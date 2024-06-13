@@ -8,20 +8,16 @@ export default defineLazyEventHandler(async () => {
     headers: {
       'X-PaLM-Api-Key': config.palm || ''
     }
-  }
-  )
+  })
 
   return defineEventHandler(async (event) => {
     const body = await readBody(event)
     const base64 = body.data.split(',')[1];
 
-    const collection = client.collections.get('PhoneGallery')
+    const myCollection = client.collections.get('PhoneGallery')
 
-    const response = await collection.query.nearImage(base64, {
-      limit: 15,
-      distance: 1.3
-    })
-
+    const response = await myCollection.query.nearImage(base64, { limit: 20 })
     return response.objects
   })
+
 })
