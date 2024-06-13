@@ -21,8 +21,14 @@ The repository lets us do three things
 
 Create a Weaviate instance on Weaviate Cloud Services as described in [this guide](https://weaviate.io/developers/weaviate/quickstart#step-2-create-an-instance)
 
+### 🦿 Create a `.env` file and add the following keys
+
+- your Google Vertex API key as NUXT_VERTEX_API_KEY (you can get this in your [Vertex AI settings](https://console.cloud.google.com/apis/credentials))
+- your Weaviate API key as NUXT_WEAVIATE_API_KEY (you can get this in your [Weaviate dashboard](https://console.weaviate.cloud/dashboard) under sandbox details)
+- your Weaviate host URL as NUXT_WEAVIATE_URL (you can get this in your [Weaviate dashboard](https://console.weaviate.cloud/dashboard) under sandbox details)
+
 ### 📩 Importing Data
-> Before you can import data, add any files to their respective media type in the `public/` folder. You will have to download a dataset of [movie posters](https://drive.google.com/drive/folders/1BKLJmIt9YD0rTGImrHeUc91io5RjGm_l?usp=sharing) and place them in `/public/image`.
+> Before you can import data, add any files to their respective media type in the `public/` folder. You will have to download a dataset of [random images](https://drive.google.com/drive/folders/17QwLNUY2nB9FhKffBD0OIpDI2C0QKdqY?usp=sharing) and place them in `/public/image`. Feel free to use your images too.
 
 With your data in the right folder, run `yarn install` to install all project dependencies and to import your data into Weaviate and initialise a collection, run:
 ```bash
@@ -56,5 +62,4 @@ Learn more about multimodal applications
 - [Open an Issue](https://github.com/malgamves/next-multimodal-search-demo/issues)
 
 
-Some credit goes to Steven for his [Spirals template](https://github.com/steven-tey/spirals)
 
