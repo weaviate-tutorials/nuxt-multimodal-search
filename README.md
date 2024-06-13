@@ -1,4 +1,4 @@
-## This is a Multimodal Search demo built with [Weaviate](https://weaviate.io), [Gemini]([https://openai.com/research/clip](https://gemini.google.com/)) and [Nuxt.js](https://nuxt.com/) 
+## This is a Multimodal Search demo built with [Weaviate](https://weaviate.io), [Gemini](https://gemini.google.com/) and [Nuxt.js](https://nuxt.com/) 
 
 ![Cover](cover.png)
 
