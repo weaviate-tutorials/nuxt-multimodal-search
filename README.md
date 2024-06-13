@@ -1,4 +1,4 @@
-## This is a Multimodal Search demo built with [Weaviate](https://weaviate.io), [Gemini](https://gemini.google.com/) and [Nuxt.js](https://nuxt.com/) 
+## This is a Multimodal Search demo built with [Weaviate](https://weaviate.io), [Vertex](https://cloud.google.com/vertex-ai) and [Nuxt.js](https://nuxt.com/) 
 
 ![Cover](cover.png)
 
@@ -12,14 +12,14 @@ git clone https://github.com/weaviate-tutorials/nuxt-multimodal-search
 
 The repository lets us do three things
 1. Run the Nuxt.js Web App.
-2. Run an instance of Weaviate.
-3. Import images, and text into your Weaviate database.
+2. Import images, and text into your Weaviate database.
+3. Search like it's 2034! 
 
 
 
-### 🏗️ Running Weaviate  
+### 🏗️ Create a Weaviate Instance
 
-Create an account on Weaviate Cloud
+Create a Weaviate instance on Weaviate Cloud Services as described in [this guide](https://weaviate.io/developers/weaviate/quickstart#step-2-create-an-instance)
 
 ### 📩 Importing Data
 > Before you can import data, add any files to their respective media type in the `public/` folder. You will have to download a dataset of [movie posters](https://drive.google.com/drive/folders/1BKLJmIt9YD0rTGImrHeUc91io5RjGm_l?usp=sharing) and place them in `/public/image`.
