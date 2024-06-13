@@ -1,7 +1,4 @@
-## This is a Multimodal Search demo built with [Weaviate](https://weaviate.io), [CLIP](https://openai.com/research/clip) and [Nuxt.js](https://nuxt.com/) 
-
-👨🏾‍🍳 Blogpost - [Building Multimodal AI in TypeScript
-](https://weaviate.io/blog/multimodal-search-in-typescript)
+## This is a Multimodal Search demo built with [Weaviate](https://weaviate.io), [Gemini]([https://openai.com/research/clip](https://gemini.google.com/)) and [Nuxt.js](https://nuxt.com/) 
 
 ![Cover](cover.png)
 
@@ -10,7 +7,7 @@
 First, clone the project with the command below
 
 ```bash
-git clone https://github.com/malgamves/flick-picker
+git clone https://github.com/weaviate-tutorials/nuxt-multimodal-search
 ```
 
 The repository lets us do three things
@@ -21,13 +18,8 @@ The repository lets us do three things
 
 
 ### 🏗️ Running Weaviate  
-> Note that the first time you run it, Docker will download ~4.8GB multi2vec-clip Weaviate module, which contains the CLIP model.
 
-To start the Weaviate instance, run the following command, which will use the `docker-compose.yml` file.
-```bash
-docker compose up -d
-```
-
+Create an account on Weaviate Cloud
 
 ### 📩 Importing Data
 > Before you can import data, add any files to their respective media type in the `public/` folder. You will have to download a dataset of [movie posters](https://drive.google.com/drive/folders/1BKLJmIt9YD0rTGImrHeUc91io5RjGm_l?usp=sharing) and place them in `/public/image`.
