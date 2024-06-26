@@ -17,7 +17,9 @@ export default defineLazyEventHandler(async () => {
     const myCollection = client.collections.get('PhoneGallery')
 
     const response = await myCollection.query.nearImage(base64, { limit: 20 })
+
     return response.objects
+    
   })
 
 })

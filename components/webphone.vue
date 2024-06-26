@@ -97,7 +97,6 @@ function convertImage(event) {
     reader.onload = async () => {
         // base64File.value = ;
         base64File.value = toString(reader.result.split(',')[1]);
-        // console.log(toString(reader.result.split(',')[1]))
 
         // explore this data piping 
         await searchImage(reader.result)
