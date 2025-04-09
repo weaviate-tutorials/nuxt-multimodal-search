@@ -17,12 +17,15 @@ export const createCollection = async (name: string) => {
 
   const newCollection = await client.collections.create({
     name: name,
-    vectorizers: weaviate.configure.vectorizer.multi2VecPalm({
-      projectId: 'semi-random-dev',
-      location: 'us-central1',
-      imageFields: ['image'],
+    vectorizers: weaviate.configure.vectorizer.multi2VecCohere({
+      imageFields: [{
+        name: "image"
+      }],
+      textFields: [{
+        name: "name"
+      }]
     }),
-    generative: weaviate.configure.generative.openAI(),
+    generative: weaviate.configure.generative.cohere(),
     properties: [
       {
         name: 'name',
