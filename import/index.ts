@@ -1,7 +1,7 @@
 import { createCollection, deleteCollection } from './collection';
 import { importMediaFiles } from './import';
 
-const collectionName = 'PhoneGallery';
+const collectionName = 'PhoneGalleryTEST';
 
 const run = async () => {
   await deleteCollection(collectionName);

@@ -6,8 +6,10 @@ export default defineNuxtConfig({
       host: process.env.NUXT_WEAVIATE_HOST_URL || '',
       key: process.env.NUXT_WEAVIATE_ADMIN_KEY || '',
       palm: process.env.NUXT_GOOGLE_API_KEY || '',
+      cohere: process.env.NUXT_COHERE_APIKEY || '',
       public: {
          palm: process.env.NUXT_GOOGLE_API_KEY || '',
+         cohere: process.env.NUXT_COHERE_APIKEY || '',
          
         },
       },

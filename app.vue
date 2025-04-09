@@ -1,6 +1,5 @@
 <template>
   <div>
-    <Iphone />
-    <!-- <Webphone /> -->
+    <Istore />
   </div>
 </template>

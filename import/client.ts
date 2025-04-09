@@ -5,10 +5,9 @@ let client: WeaviateClient;
 
 export const getWeaviateClient = async () => {
   if (!client) {
-    client = await weaviate.connectToWeaviateCloud(process.env.NUXT_WEAVIATE_HOST_URL || '',{
-    authCredentials: new weaviate.ApiKey(process.env.NUXT_WEAVIATE_ADMIN_KEY || ''),
+    client = await weaviate.connectToLocal({
     headers: {
-      'X-Palm-Api-Key': process.env.NUXT_GOOGLE_API_KEY || '',  // Replace with your inference API key
+      'X-Cohere-Api-Key': process.env.NUXT_COHERE_APIKEY || '',  // Replace with your inference API key
     }
   }
 )

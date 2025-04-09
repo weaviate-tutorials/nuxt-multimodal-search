@@ -1,4 +1,4 @@
-import { type WeaviateClient, generateUuid5 } from 'weaviate-client';
+import { type WeaviateClient, generateUuid5, toBase64FromMedia } from 'weaviate-client';
 import { getWeaviateClient } from './client';
 import { getBase64, listFiles } from './util';
 
@@ -16,7 +16,7 @@ const insertImages = async (collectionName: string) => {
 
     const batchSize = 20;
     let dataObject = [];
-    const imagesCollection = client.collections.get(collectionName);
+    const imagesCollection = client.collections.use(collectionName);
 
     const files = listFiles(sourceImages);
     console.log(`Importing ${files.length} images.`);
@@ -27,7 +27,7 @@ const insertImages = async (collectionName: string) => {
 
         const item = {
             name: file.name,
-            image: getBase64(file.path),
+            image: await toBase64FromMedia(file.path),
         };
 
         dataObject.push(item);
@@ -37,11 +37,16 @@ const insertImages = async (collectionName: string) => {
             let response = await imagesCollection.data.insertMany(dataObject);
             // Clear the dataObject array
             dataObject = [];
+            console.log(response)
         }
         
     }
 
     if (counter % batchSize !== 0)
         await imagesCollection.data.insertMany(dataObject);
+
+
+    const response = await imagesCollection.query.fetchObjects({limit:10})
+    console.info("fetched objects",response.objects)
 }
 

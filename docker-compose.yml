@@ -9,7 +9,7 @@ services:
     - '8080'
     - --scheme
     - http
-    image: semitechnologies/weaviate:1.23.9
+    image: semitechnologies/weaviate:1.27.3
     ports:
     - 8080:8080
     - 50051:50051
@@ -17,11 +17,12 @@ services:
     environment:
       CLIP_INFERENCE_API: 'http://multi2vec-clip:8080'
       OPENAI_APIKEY: $OPENAI_APIKEY
+      COHERE_APIKEY: $COHERE_APIKEY
       QUERY_DEFAULTS_LIMIT: 25
       AUTHENTICATION_ANONYMOUS_ACCESS_ENABLED: 'true'
       PERSISTENCE_DATA_PATH: '/var/lib/weaviate'
       DEFAULT_VECTORIZER_MODULE: 'multi2vec-clip'
-      ENABLE_MODULES: 'multi2vec-clip,generative-openai'
+      ENABLE_MODULES: 'multi2vec-clip,generative-openai, multi2vec-cohere, generative-cohere'
       CLUSTER_HOSTNAME: 'node1'
   multi2vec-clip:
     image: semitechnologies/multi2vec-clip:sentence-transformers-clip-ViT-B-32
